@@ -1,0 +1,281 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 30px;
+  background-color: #2a2727;
+  padding: 20px;
+  border-right: 2px solid #1f1e1e;
+  position: relative;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  /* border-radius: 5%; */
+}
+
+/* Expanded width on hover */
+.sidebar:hover {
+  width: 150px;
+}
+
+.sidebar h2 {
+  margin-bottom: 200px;
+  margin-top: 20px;
+  font-size: 18px;
+  /* color: black; */
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.sidebar h2 .sidebar-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+/* Weather App heading  */
+.sidebar h2 span {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: yellow;
+}
+
+.sidebar:hover h2 span {
+  opacity: 1;
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 40px;
+  margin-left: 0px;
+  padding-right: 10px;
+  display: flex;
+  align-items: left;
+  justify-content: start;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: yellow;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.sidebar ul li a img.sidebar-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 50px;
+}
+
+.sidebar ul li a span {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar:hover ul li a span {
+  opacity: 1;
+}
+
+/* Updated hover styles for images inside the sidebar */
+/* On hover, margin-right becomes 0px and width becomes 30px */
+.sidebar:hover ul li a img.sidebar-icon {
+  width: 30px; /* Set width to 30px */
+  margin-right: 10px; /* Set margin-right to 0px */
+  transition: all 0.3s ease; /* Smooth transition */
+  /* margin-bottom: 100px; */
+}
+
+.sidebar ul li a:hover {
+  background-color: black;
+  border: 2px solid yellow;
+  transform: scale(1.05);
+}
+
+.sidebar ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar ul li a {
+  justify-content: start;
+}
+
+/* When sidebar is collapsed, icons only are visible and elements are vertically centered */
+.sidebar:not(:hover) ul li {
+  height: calc(
+    30vh / 3
+  ); /* Divide sidebar height into equal parts for centering */
+}
+
+.sidebar:not(:hover) ul li a {
+  justify-content: center;
+}
+
+.sidebar:not(:hover) ul li a span {
+  display: none;
+}
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Added space between search bar and content below */
+}
+
+.search-bar {
+  width: 1000px;
+  padding: 10px;
+  background-color: #333;
+  color: grey;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.search-bar:focus {
+  outline: none;
+  background-color: black ;
+  color: yellow;
+  font-size: 19px;
+}
+.search-bar:hover{
+  border: 2px solid yellow;
+  color: yellow;
+  background-color: #121212;
+}
+
+button {
+  height: 40px;
+  width: 150px;
+  margin: 10px;
+  margin-left: 0;
+  background-color: yellow;
+  font-size: 18px;
+  border-radius: 10%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.user-profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+/* Content Section with Table and Chatbot Side by Side */
+.content-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px; /* Additional spacing below the header */
+  gap: 20px; /* Added gap to ensure space between the boxes */
+}
+
+.table-content,
+.chatbot {
+  flex: 1;
+}
+
+.table-content {
+  background-color: black;
+  padding: 20px;
+  color: yellow;
+  text-align: center;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 5px;
+  height: 600px;
+  /* border: 2px solid ; */
+}
+
+.table-box {
+  height: 80%;
+  background-color: #1e1e1e;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.table-box:hover {
+  background-color: black;
+  border: 2px solid yellow;
+}
+
+.chatbot {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: black;
+  padding: 20px;
+  border-radius: 5px;
+  height: 600px;
+}
+
+.chat-bar {
+  background-color: #1e1e1e;
+  padding: 10px;
+  border-radius: 5px;
+ 
+}
+.chat-bar:hover{
+  border: 2px solid yellow;
+  color: yellow;
+  background-color: #121212;
+}
+
+.chat-input {
+  width: 96%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.chat-input:focus {
+  outline: none;
+  background-color: black ;
+  color: yellow;
+  font-size: 16px;
+}
+
+.chat-answer {
+  background-color: #1e1e1e;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  height: 100%;
+}
+.chat-answer:hover{
+  background-color: black;
+  border: 2px solid yellow;
+}

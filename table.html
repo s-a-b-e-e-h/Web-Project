@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tables</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="table.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar Section -->
+
+      <div class="sidebar">
+        <a href="index.html">
+          <h2>
+            <img src="icon.png" alt="Weather App Icon" class="sidebar-icon" />
+            <span>Weather App</span>
+          </h2>
+        </a>
+        <ul>
+          <li>
+            <a href="index.html">
+              <img
+                src="dashboard.png"
+                alt="Dashboard Icon"
+                class="sidebar-icon"
+              />
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="table.html">
+              <img src="table.png" alt="Table Icon" class="sidebar-icon" />
+              <span>Tables</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Main Content Section -->
+      <div class="main-content">
+        <!-- Header with Search Bar and User Profile -->
+        <div class="header">
+          <input
+            type="text"
+            placeholder="Search city..."
+            class="search-bar"
+            id="search-bar"
+          />
+          <button id="getWeatherBtn">Get Weather</button>
+
+          <div class="user-profile">
+            <span>Profile</span>
+            <div class="profile-pic"></div>
+          </div>
+        </div>
+
+        <!-- Content Section with Table and Chatbot Side by Side -->
+        <div class="content-section">
+          <div class="table-content">
+            <h3>
+              <u><i>Table</i></u>
+            </h3>
+            <div class="table-box">
+              <canvas id="weatherChart"></canvas>
+            </div>
+          </div>
+
+          <div class="chatbot">
+            <div class="chat-bar">
+              <input
+                type="text"
+                placeholder="Chat with the bot..."
+                class="chat-input"
+              />
+            </div>
+            <div class="chat-answer">
+              <!-- Placeholder for chatbot answers -->
+              <h4>Answer Area for Chatbot</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="table.js"></script>
+  </body>
+</html>

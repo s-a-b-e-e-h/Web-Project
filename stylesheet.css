@@ -1,0 +1,272 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0e0e0e;
+  color: #ffffff;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 90px; 
+  background-color: #2a2727;
+  padding: 20px;
+  border-right: 2px solid #1f1e1e;
+  position: relative;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  /* border-radius: 5%; */
+}
+
+/* Expanded width on hover */
+.sidebar:hover {
+  width: 150px;
+}
+
+.sidebar h2 {
+  margin-bottom: 200px;
+  margin-top: 20px;
+  font-size: 18px;
+  color: black;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.sidebar h2 .sidebar-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+.sidebar h2 span {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: yellow;
+}
+
+.sidebar:hover h2 span {
+  opacity: 1;
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #ccc;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.sidebar ul li a img.sidebar-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.sidebar ul li a span {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar:hover ul li a span {
+  opacity: 1;
+}
+
+.sidebar ul li a:hover {
+  background-color: #00ffff;
+  color: #000;
+  /* width: 100px; */
+  transform: scale(1.05);
+}
+
+.sidebar ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar ul li a {
+  justify-content: start;
+}
+
+/* When sidebar is collapsed, icons only are visible and elements are vertically centered */
+.sidebar:not(:hover) ul li {
+  height: calc(
+    40vh / 3
+  ); /* Divide sidebar height into equal parts for centering */
+}
+
+.sidebar:not(:hover) ul li a {
+  justify-content: center;
+}
+
+.sidebar:not(:hover) ul li a span {
+  display: none;
+}
+
+/* Main Content Styling */
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #2b2b2b;
+  color: #fff;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+}
+
+.user-profile span {
+  margin-right: 10px;
+  color: #00ffff;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+/* Weather Data Section */
+.weather-data {
+  background-color: #2e2e2e;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  opacity: 0;
+  color: black;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transform: translateY(20px);
+}
+
+#weather-div {
+  height: 22%;
+  color: yellow;
+  font-size: 18px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+#weather-div:hover {
+  background-color: black;
+  border: 2px solid yellow;
+}
+.charts {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chart-box {
+  width: 33%;
+  height: 498px;
+  background-color: #2e2e2e;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.chart-box h4 {
+  margin-bottom: 10px;
+  font-size: 28px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: yellow;
+}
+
+.chart-box:hover {
+  transform: scale(1.05);
+  /* color: black; */
+  background-color: black;
+  border: 2px solid yellow;
+}
+
+.animated {
+  transition: all 0.5s ease;
+  /* color: white; */
+}
+
+button {
+  height: 40px;
+  width: 100px;
+  background-color: yellow;
+  font-size: 18px;
+  border-radius: 10%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#weather-heading{
+  /* margin-bottom: 10px; */
+  font-size: 24px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: yellow;
+}
+
+#weather-div {
+  display: flex;
+  justify-content: center; /* Space out columns evenly */
+  gap: 2px; /* Add some space between columns */
+}
+
+#weather-div .weather-grid {
+  display: flex;
+  gap: 0px;
+  text-align: center;
+  /* flex-wrap: wrap;  */
+}
+
+#weather-div li {
+  list-style: none; /* Remove bullet points */
+  /* padding-top:   20px; */
+  gap: 0px;
+  border-radius: 5px;
+  width: 280px; /* Control column width */
+  text-align: center;
+}
+
